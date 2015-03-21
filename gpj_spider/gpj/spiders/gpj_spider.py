@@ -45,6 +45,15 @@ class GpjSpider(BaseSpider):
         importants = hxs.select('//div[contains(@class,"configur")]/ul/li')
         imp = []
         for important in importants:
-            imp.append(important.select('em/text()').extract())
-        item['tags']["重要"] = imp
+            text = important.select('span/text()').extract()
+            if text:
+                imp.append(text)
+        item['tags'][u"配置亮点"] = imp
+        item['transmission'] = hxs.select('//div[contains(@class,"param clearfix")]/div[2]/table/tr[1]/td[2]/text()').extract()
+        item['type'] = hxs.select('//div[contains(@id,"ulover")]/div[2]/div[2]/table/tr[1]/td[2]').extract()
         return item
+
+
+
+
+
