@@ -18,7 +18,7 @@ class GpjSpider(BaseSpider):
         hxs = HtmlXPathSelector(response)
         number = int(hxs.select('//div[contains(@class,"con-page search_page_link")]/a[last()-1]/text()').extract()[0])
         items = []
-        for i in range(1, 2):
+        for i in range(1, number):
             build_url = 'http://www.xin.com/quanguo/s/o2a2i%sv1/' % (i)
             items.append(self.make_requests_from_url(build_url).replace(callback=self.parse_index))
         return items
@@ -28,7 +28,7 @@ class GpjSpider(BaseSpider):
         urls = hxs.select('//div[contains(@class,"car-vtc vtc-border")]/div[contains(@class,"vtc-img")]/a/@href')
         items = []
         for url in urls:
-            build_url = 'http://www.xin.com/%s' % (url.extract())
+            build_url = 'http://www.xin.com%s' % (url.extract())
             items.append(self.make_requests_from_url(build_url).replace(callback=self.parse_page))
         return items
 
@@ -52,8 +52,3 @@ class GpjSpider(BaseSpider):
         item['transmission'] = hxs.select('//div[contains(@class,"param clearfix")]/div[2]/table/tr[1]/td[2]/text()').extract()
         item['type'] = hxs.select('//div[contains(@id,"ulover")]/div[2]/div[2]/table/tr[1]/td[2]').extract()
         return item
-
-
-
-
-
