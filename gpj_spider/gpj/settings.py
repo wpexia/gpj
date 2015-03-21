@@ -6,10 +6,10 @@
 #     http://doc.scrapy.org/topics/settings.html
 #
 
-BOT_NAME = 'gpj_spider'
+BOT_NAME = 'gpj'
 
-SPIDER_MODULES = ['gpj_spider.spiders']
-NEWSPIDER_MODULE = 'gpj_spider.spiders'
+SPIDER_MODULES = ['gpj.spiders']
+NEWSPIDER_MODULE = 'gpj.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'gpj_spider (+http://www.yourdomain.com)'
+#USER_AGENT = 'gpj (+http://www.yourdomain.com)'
