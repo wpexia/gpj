@@ -1,10 +1,11 @@
 from django.conf.urls import patterns, include, url
-
+import seacher.views as views
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^test/$', views.testweb),
     # Examples:
     # url(r'^$', 'gpjweb.views.home', name='home'),
     # url(r'^gpjweb/', include('gpjweb.foo.urls')),
