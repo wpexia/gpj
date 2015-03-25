@@ -6,6 +6,8 @@ import seacher.views as views
 
 urlpatterns = patterns('',
     (r'^test/$', views.testweb),
+    (r'^json/$', views.make_model),
+    (r'^view/$',views.test_view),
     # Examples:
     # url(r'^$', 'gpjweb.views.home', name='home'),
     # url(r'^gpjweb/', include('gpjweb.foo.urls')),

@@ -50,5 +50,5 @@ class GpjSpider(BaseSpider):
                 imp.append(text)
         item['tags'][u"配置亮点"] = imp
         item['transmission'] = hxs.select('//div[contains(@class,"param clearfix")]/div[2]/table/tr[1]/td[2]/text()').extract()
-        item['type'] = hxs.select('//div[contains(@id,"ulover")]/div[2]/div[2]/table/tr[1]/td[2]').extract()
+        item['type'] = hxs.select('//div[contains(@id,"ulover")]/div[2]/div[2]/table/tr[1]/td[2]/text()').extract()
         return item
