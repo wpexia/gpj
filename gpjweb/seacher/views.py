@@ -25,7 +25,3 @@ def make_model(request):
     car.no = js['url'].split("/")[-1].split(".")[0].encode("utf-8")
     car.save()
     return HttpResponse()
-
-def test_view(request):
-    Car.objects.all()
-    return HttpResponse()

@@ -1,13 +1,14 @@
 from django.conf.urls import patterns, include, url
 import seacher.views as views
+from django.conf.urls.static import static
+import settings
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^test/$', views.testweb),
-    (r'^json/$', views.make_model),
-    (r'^view/$',views.test_view),
+    url(r'^staticfiles/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATICFILES_DIRS, 'show_indexes': True}),
     # Examples:
     # url(r'^$', 'gpjweb.views.home', name='home'),
     # url(r'^gpjweb/', include('gpjweb.foo.urls')),
