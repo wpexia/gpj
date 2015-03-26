@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>典型案例 - FineUI - 基于 ExtJS 的专业 ASP.NET 控件库</title>
+    <title>GPJ 二手车搜索 LHY 的面试项目</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="/staticfiles/css/bootstrap.css" rel="stylesheet">
@@ -54,56 +54,51 @@
             max-width: none;
         }
 
-        /*
-        #masonry .thumbnail.style1
-        {
+        #masonry .thumbnail.style1 {
             border-color: #d6e9c6;
         }
-        #masonry .thumbnail.style1 .caption
-        {
+
+        #masonry .thumbnail.style1 .caption {
             color: #468847;
             background-color: #dff0d8;
             border-color: #d6e9c6;
         }
-        #masonry .thumbnail.style1 .caption a
-        {
+
+        #masonry .thumbnail.style1 .caption a {
             color: #468847;
             text-decoration: underline;
         }
 
-
-        #masonry .thumbnail.style3
-        {
+        #masonry .thumbnail.style3 {
             border-color: #428bca;
         }
-        #masonry .thumbnail.style3 .caption
-        {
+
+        #masonry .thumbnail.style3 .caption {
             color: #fff;
             background-color: #428bca;
             border-color: #428bca;
         }
-        #masonry .thumbnail.style3 .caption a
-        {
+
+        #masonry .thumbnail.style3 .caption a {
             color: #fff;
             text-decoration: underline;
         }
 
-        #masonry .thumbnail.style4
-        {
+        #masonry .thumbnail.style4 {
             border-color: #bce8f1;
         }
-        #masonry .thumbnail.style4 .caption
-        {
+
+        #masonry .thumbnail.style4 .caption {
             color: #3a87ad;
             background-color: #d9edf7;
             border-color: #bce8f1;
         }
-        #masonry .thumbnail.style4 .caption a
-        {
+
+        #masonry .thumbnail.style4 .caption a {
             color: #3a87ad;
             text-decoration: underline;
         }
-        */
+
     </style>
 </head>
 
@@ -118,16 +113,62 @@
     </div>
 </div>
 <div class="container">
-
-    <div style="padding:30px; text-align:center; border-bottom:solid 1px #ddd; display:none;">
-        <a target="_blank" href="http://fineui.com/bbs/forum.php?mod=forumdisplay&fid=37"
-           class="btn btn-large btn-primary">申请加入典型案例</a>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="btn-group btn-group-justified">
+                <div class="btn-group">
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">级别<i class="caret"></i></button>
+                    <ul class="dropdown-menu" role="menu" style="left:20%;text-align: center">
+                        <li><a href="javascript:" data="微型车">微型车</a></li>
+                        <li><a href="javascript:" data="小型车">小型车</a></li>
+                        <li><a href="javascript:" data="紧凑型车">紧凑型车</a></li>
+                        <li><a href="javascript:" data="中型车">中型车</a></li>
+                        <li><a href="javascript:" data="大型车">大型车</a></li>
+                        <li><a href="javascript:" data="豪华型车">豪华型车</a></li>
+                        <li><a href="javascript:" data="跑车">跑车</a></li>
+                        <li><a href="javascript:" data="MPV">MPV</a></li>
+                        <li><a href="javascript:" data="SUV">SUV</a></li>
+                        <li><a href="javascript:" data="商用车">商用车</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">里程<i class="caret"></i></button>
+                    <ul class="dropdown-menu" role="menu" style="left:20%;text-align: center">
+                        <li><a href="javascript:">1万公里以内</a></li>
+                        <li><a href="javascript:">1-3万公里</a></li>
+                        <li><a href="javascript:">3-6万公里</a></li>
+                        <li><a href="javascript:">6万公里以上</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">价格<i class="caret"></i></button>
+                    <ul class="dropdown-menu" role="menu" style="left:20%;text-align: center">
+                        <li><a href="javascript:">3万元以内</a></li>
+                        <li><a href="javascript:">3-5万元</a></li>
+                        <li><a href="javascript:">5-8万元</a></li>
+                        <li><a href="javascript:">8-10万元</a></li>
+                        <li><a href="javascript:">10-15万元</a></li>
+                        <li><a href="javascript:">15-20万元</a></li>
+                        <li><a href="javascript:">20-30万元</a></li>
+                        <li><a href="javascript:">30-50万元</a></li>
+                        <li><a href="javascript:">50万元以上</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">车龄<i class="caret"></i></button>
+                    <ul class="dropdown-menu" role="menu" style="left:20%;text-align: center">
+                        <li><a href="javascript:">1年以内</a></li>
+                        <li><a href="javascript:">1-3年</a></li>
+                        <li><a href="javascript:">3-5年</a></li>
+                        <li><a href="javascript:">5-8年</a></li>
+                        <li><a href="javascript:">8年以上</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-
     <div id="masonry" class="container-fluid">
     </div>
-
-
     <div id="masonry_ghost" class="hide">
         <div class="thumbnail">
             <div class="imgs">
@@ -139,7 +180,7 @@
 
                 </div>
                 <div class="author">
-                    by <a target="_blank" href="http://fineui.com/bbs/home.php?mod=space&uid=2426">小小生</a>
+                    by <a target="_blank" href="http://fineui.com/bbs/home.php?mod=space&uid=2426"></a>
                 </div>
             </div>
         </div>
@@ -679,7 +720,7 @@
             ghostIndexArray[i] = i;
         }
         ghostIndexArray.sort(function (a, b) {
-            if (Math.random() > 0.5) {
+            if (a - b > 0) {
                 return a - b;
             } else {
                 return b - a;
@@ -709,7 +750,7 @@
                 var title = $this.find('.title').text();
                 var author = $this.find('.author').text();
                 title += '&nbsp;&nbsp;(' + author + ')';
-                var lightboxName = 'lightbox_'; // + imgNames[0];
+                var lightboxName = 'lightbox_';
 
                 var imgNames = imgsNode.find('input[type=hidden]').val().split(',');
                 $.each(imgNames, function (index, item) {
@@ -762,17 +803,6 @@
             }
 
         });
-
-
-        function randomColor() {
-            var rand = Math.floor(Math.random() * 0xFFFFFF).toString(16);
-            for (; rand.length < 6;) {
-                rand = '0' + rand;
-            }
-            return '#' + rand;
-        }
-
-
     });
 </script>
 </body>
