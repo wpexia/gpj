@@ -47,7 +47,7 @@ class GpjSpider(BaseSpider):
             item.mileage = hxs.select('//ul[contains(@class,"contit")]/li[2]/em/text()').extract()[0][0:-3].encode("utf-8")
             item.price = hxs.select('//div[contains(@class,"wan_1")]/em/text()').extract()[0][1:-1].encode("utf-8")
             item.title = hxs.select('//div[contains(@class,"tit")]/h1/text()').extract()[0].encode("utf-8")
-            item.img = hxs.select('//div[contains(@class,"d-photo img-album")]/a/img/@src').extract()[0].encode("utf-8")
+            item.img = hxs.select('//div[contains(@class,"d-photo img-album")]/a/img/@src').extract()[0].encode("utf-8").split('%')[0]
             item.url = response.url
             importants = hxs.select('//div[contains(@class,"configur")]/ul/li')
             imp = []

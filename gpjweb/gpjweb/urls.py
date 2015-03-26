@@ -9,6 +9,7 @@ import settings
 urlpatterns = patterns('',
     (r'^test/$', views.testweb),
     url(r'^staticfiles/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATICFILES_DIRS, 'show_indexes': True}),
+    (r'^images', views.image),
     # Examples:
     # url(r'^$', 'gpjweb.views.home', name='home'),
     # url(r'^gpjweb/', include('gpjweb.foo.urls')),
