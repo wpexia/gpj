@@ -186,13 +186,21 @@
             <div class="caption">
                 <div class="title">{{ car.title }}</div>
                 <div class="content">
-                    <div class="text-danger">
-                        <p>￥{{ car.price }}万元</p>
-                    </div>
+                    <ul class="list-inline" style="margin-bottom: 0">
+                        <li class="text-danger"><p>￥{{ car.price }}万元</p></li>
+                        <li> {{ car.transmission }}</li>
+                    </ul>
                     <div class="text-info">
                         上牌时间：{{ car.licenseTime }}
                         里程：{{ car.mileage }}万公里
                     </div>
+                </div>
+            </div>
+            <div class="hide">
+                <div class="tags">
+                    {% for tag in car.tags %}
+                    {{ tag }}
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -254,7 +262,8 @@
                 var imgsNode = $this.find('.imgs');
                 var title = $this.find('.title').text();
                 var lightboxName = 'lightbox_';
-
+                var tags = $this.find('.tags').text();
+                title += '<br />' + tags;
                 var imgNames = imgsNode.find('input[type=hidden]').val().split(',');
                 $.each(imgNames, function (index, item) {
                     imgsNode.append('<a href="' + item + '" data-lightbox="' + lightboxName + '" title="' + title + '"><img src="' + item + '" /></a>');

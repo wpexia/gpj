@@ -3,7 +3,7 @@ __author__ = 'wpexia'
 
 from scrapy.spider import BaseSpider
 from scrapy.selector import HtmlXPathSelector
-
+import json
 from gpj.items import GpjItem
 
 
@@ -55,7 +55,7 @@ class GpjSpider(BaseSpider):
                 text = important.select('span/text()').extract()
                 if text:
                     imp.append(text[0].encode("utf-8"))
-            item.tags = imp
+            item.tags = json.dumps(imp)
             item.transmission = hxs.select('//div[contains(@class,"param clearfix")]/div[2]/table/tr[1]/td[2]/text()').extract()[0].encode("utf-8")
             item.type = hxs.select('//div[contains(@id,"ulover")]/div[2]/div[2]/table/tr[1]/td[2]/text()').extract()[0].encode("utf-8")
             item.no = number

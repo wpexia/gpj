@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import time
-import urllib2
 import json
+import urllib2
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from seacher.models import Car
@@ -12,19 +12,27 @@ prices = [0,3,5,8,10,15,20,30,50,65535]
 pricetext = ['不限', '3万元以内', '3-5万元', '5-8万元', '8-10万元', '10-15万元', '15-20万元', '20-30万元', '30-50万元', '50万元以上']
 carages = [0,1,3,5,8,50]
 caragetext = ['不限', '1年以内', '1-3年', '3-5年', '5-8年', '8年以上']
-def testweb(request):
+def mainweb(request):
     type = 0
     mileage = 0
     price = 0
     carage = 0
     if 'type' in request.GET:
         type = int(float(request.GET['type']))
+        if type >= len(types):
+            type = 0
     if 'mileage' in request.GET:
         mileage = int(float(request.GET['mileage']))
+        if mileage >= len(mileages):
+            mileage = 0
     if 'price' in request.GET:
         price = int(float(request.GET['price']))
+        if price >= len(prices):
+            price = 0
     if 'carage' in request.GET:
         carage = int(float(request.GET['carage']))
+        if carage >= len(carages):
+            carage = 0
     cars = Car.objects.all()
     if type!=0 :
         cars = cars.filter(type=types[type])
@@ -43,7 +51,10 @@ def testweb(request):
         cars = cars.filter(licenseTime__range=[past, now])
     setting = {'type': type, 'mileage': mileage, 'price': price, 'carage': carage}
     settext = {'type': types[type], 'mileage': mileagetext[mileage], 'price': pricetext[price], 'carage': caragetext[carage]}
-    params = {'cars': list(cars), 'setting': setting, 'settext': settext}
+    cars = list(cars)
+    for car in cars:
+        car.tags = json.loads(car.tags)
+    params = {'cars': cars, 'setting': setting, 'settext': settext}
     return render_to_response('test.html', params)
 
 
